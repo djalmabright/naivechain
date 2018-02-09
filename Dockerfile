@@ -10,5 +10,5 @@ EXPOSE 3001
 EXPOSE 6001
 
 ENTRYPOINT cd /naivechain && npm install && PEERS=$PEERS npm start 
-docker-compose up
+RUN compose up
 curl -H "Content-type:application/json" --data '{"data" : "Some data to the first block"}' http://localhost:3001/mineBlock
